@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg-deep: #2a0a1a;
+  --color-bg-wine: #4a0e2e;
+  --color-bg-crimson: #8b1a4a;
+  --color-accent-coral: #f05a5a;
+  --color-accent-orange: #e87a3a;
+  --color-text-primary: #f5e6e8;
+  --color-text-muted: #c9a0a8;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-bg-deep)] text-[var(--color-text-primary)] font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-[var(--color-accent-coral)] text-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .clip-reveal {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .clip-reveal.is-visible {
+    clip-path: inset(0 0 0% 0);
+  }
+}
